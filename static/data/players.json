@@ -1,0 +1,157 @@
+[
+    {
+      "id": 12553,
+      "fullname": "Yuri 'yuurih' Santos",
+      "nick": "yuurih",
+      "image": "https://img-cdn.hltv.org/playerbodyshot/i6UGhkYxrhutAOmWZT0-8O.png?ixlib=java-2.1.0&w=400&s=2cd696f6ff4baf5680a43d537214b6eb",
+      "age": 25,
+      "timeOnTeam": "7 years5 months",
+      "mapsPlayed": 1335,
+      "type": "Starter",
+      "country": {
+        "code": "BR",
+        "name": "Brazil"
+      },
+      "socials": {
+        "twitter": null,
+        "twitch": "https://www.twitch.tv/yuurih",
+        "facebook": null,
+        "instagram": "https://www.instagram.com/yuurihfps"
+      }
+    },
+    {
+      "id": 15631,
+      "fullname": "Kaike 'KSCERATO' Cerato",
+      "nick": "KSCERATO",
+      "image": "https://img-cdn.hltv.org/playerbodyshot/U6t0j2bJDKUR3mTI8rIqv7.png?ixlib=java-2.1.0&w=400&s=b5257c378b8122f415f21985855e95ca",
+      "age": 25,
+      "timeOnTeam": "7 years2 months",
+      "mapsPlayed": 1310,
+      "type": "Starter",
+      "country": {
+        "code": "BR",
+        "name": "Brazil"
+      },
+      "socials": {
+        "twitter": null,
+        "twitch": "https://www.twitch.tv/ksceratofps",
+        "facebook": null,
+        "instagram": "https://www.instagram.com/kscerato"
+      }
+    },
+    {
+      "id": 2023,
+      "fullname": "Gabriel 'FalleN' Toledo",
+      "nick": "FalleN",
+      "image": "https://img-cdn.hltv.org/playerbodyshot/Wf26SO_o8nvnsLh0AqZXc5.png?ixlib=java-2.1.0&w=400&s=36b7189a4ae7b020d0acb087fd44777a",
+      "age": 33,
+      "timeOnTeam": "1 year10 months",
+      "mapsPlayed": 309,
+      "type": "Starter",
+      "country": {
+        "code": "BR",
+        "name": "Brazil"
+      },
+      "socials": {
+        "twitter": null,
+        "twitch": "https://www.twitch.tv/gafallen",
+        "facebook": null,
+        "instagram": "https://www.instagram.com/fallen"
+      }
+    },
+    {
+      "id": 24144,
+      "fullname": "Danil 'molodoy' Golubenko",
+      "nick": "molodoy",
+      "image": "https://img-cdn.hltv.org/playerbodyshot/qNyAd_xVHTTmbCAKPx-jPk.png?ixlib=java-2.1.0&w=400&s=b128ede878e462107c70590202b14139",
+      "age": 20,
+      "timeOnTeam": "24 days",
+      "mapsPlayed": 0,
+      "type": "Starter",
+      "country": {
+        "code": "KZ",
+        "name": "Kazakhstan"
+      },
+      "socials": {
+        "twitter": null,
+        "twitch": null,
+        "facebook": null,
+        "instagram": null
+      }
+    },
+    {
+      "id": 13915,
+      "fullname": "Mareks 'YEKINDAR' Gaļinskis",
+      "nick": "YEKINDAR",
+      "image": "https://img-cdn.hltv.org/playerbodyshot/rRclDPBXIMxFv2fv0dV0J0.png?ixlib=java-2.1.0&w=400&s=2b0f6209ca40efa081852b9d1d8e01c1",
+      "age": 25,
+      "timeOnTeam": "13 days",
+      "mapsPlayed": 0,
+      "type": "Starter",
+      "country": {
+        "code": "LV",
+        "name": "Latvia"
+      },
+      "socials": {
+        "twitter": null,
+        "twitch": "https://www.twitch.tv/yekindar",
+        "facebook": null,
+        "instagram": "https://www.instagram.com/yek1ndar"
+      }
+    },
+    {
+      "id": 10566,
+      "fullname": "Marcelo 'chelo' Cespedes",
+      "nick": "chelo",
+      "image": "https://img-cdn.hltv.org/playerbodyshot/1UmLZkSSAfBosakeRR3gwZ.png?ixlib=java-2.1.0&w=400&s=4b513eb29f7896053a6996ef30575ed8",
+      "age": 26,
+      "timeOnTeam": "1 year10 months",
+      "mapsPlayed": 309,
+      "type": "Benched",
+      "country": {
+        "code": "BR",
+        "name": "Brazil"
+      },
+      "socials": {
+        "twitter": null,
+        "twitch": "https://www.twitch.tv/chelok1ng",
+        "facebook": null,
+        "instagram": "https://www.instagram.com/chelok1ng"
+      }
+    },
+    {
+      "id": 18676,
+      "fullname": "Felipe 'skullz' Medeiros",
+      "nick": "skullz",
+      "image": "https://img-cdn.hltv.org/playerbodyshot/Ql8Oez5CfB2SBPOQdLJdL3.png?ixlib=java-2.1.0&w=400&s=780116a9290d11b1347f35182716ad53",
+      "age": 23,
+      "timeOnTeam": "9 months",
+      "mapsPlayed": 140,
+      "type": "Benched",
+      "country": {
+        "code": "BR",
+        "name": "Brazil"
+      },
+      "socials": {
+        "twitter": null,
+        "twitch": "https://www.twitch.tv/skullzcs",
+        "facebook": null,
+        "instagram": "https://www.instagram.com/skullzcs"
+      }
+    },
+    {
+      "id": 24267,
+      "fullname": "Sid Macedo",
+      "nick": "sidde",
+      "image": "https://img-cdn.hltv.org/playerbodyshot/q2PQMwyNdB4qAuRN9mEWl0.png?ixlib=java-2.1.0&w=400&s=456ffc5a425a22d8711a9b32c7789af0",
+      "age": 28,
+      "timeOnTeam": "9 months",
+      "mapsPlayed": 140,
+      "type": "Coach",
+      "country": {
+        "code": "BR",
+        "name": "Brazil"
+      }
+    }
+  ]
+  
