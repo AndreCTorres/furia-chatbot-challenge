@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FURIA PanteraBot - A Torcida Mais Furiosa do Mundo!</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/cards.css">
+    <link rel="stylesheet" href="/css/chatbot.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="/images/logo_furia.png">
+</head>
+<body class="landing">
+            <div class="container">
+            <img src="/images/logo_furia.png" alt="Logo FURIA" class="logo">
+            <h1>Entre na caçada com a torcida mais insana do planeta! </h1>
+            <p class="subtitle">Conecte-se com o Bot que foi feito exclusivamente para você ficar por dentro de tudo sobre a equipe.</p>
+            
+            <div class="features">
+                <div class="feature" id="stats">
+                    <span>👥</span>
+                    <p>Elenco Atual</p>
+                </div>
+                <div class="feature history-card" id="facts">
+                    <span>📖</span>
+                    <p>Nossa História</p>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <div class="social-legend">
+                    Siga a FURIA nas redes e vibre cada jogada de perto!
+                </div>
+                <a href="https://x.com/furia" target="_blank" class="social-link">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/furiagg" target="_blank" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.twitch.tv/furiatv" target="_blank" class="social-link">
+                    <i class="fab fa-twitch"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="statsModal">
+            <div class="modal">
+                <button class="modal-close">&times;</button>
+                <h2>Conheça um pouco mais sobre o nosso atual elenco de Counter-Strike 2</h2>
+                <div class="players-grid" id="playersGrid">
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Nossa História -->
+        <div class="modal-overlay history-modal-overlay page-fade" id="historyModal">
+            <div class="history-modal-emotional-bg">
+                <div class="history-modal-content emotional-letter">
+                    <span class="history-quote">“</span>
+                    <span class="history-lead">Nossa história começou em 2017, em Uberlândia, com um sonho ousado: mostrar ao mundo a força do Brasil nos esports.</span><br><br>
+                    <span class="history-body">
+                        De lá pra cá, crescemos juntos — time e torcida — superando desafios, conquistando títulos e escrevendo capítulos inesquecíveis. A FURIA nasceu no CS, mas cresceu muito além dos servidores. Cresceu no grito da torcida, nos momentos marcantes, nas derrotas que ensinaram e nas vitórias que nos colocaram entre os gigantes do mundo. Fomos pioneiros, abrimos caminhos, formamos talentos e nos tornamos referência global.<br><br>
+                        Do primeiro Major em Katowice ao rugido das arquibancadas no IEM Rio. Das promessas da base à consagração de nomes como KSCERATO e yuurih. Cada mapa jogado, cada clutch vencido, cada lágrima derramada — tudo isso constrói a nossa identidade.<br><br>
+                        A cada conquista, a FURIA se tornou mais do que um time: virou um movimento, uma família apaixonada, unida pela mesma energia. Nossa camisa carrega suor, tradição e o sonho de milhões de torcedores. Somos parte dessa história — dentro e fora dos servidores, nas arquibancadas, nas redes, no grito e no coração.<br><br>
+                        Não somos só resultados. Somos paixão, estratégia, lifestyle. Somos o frio na barriga antes do pistol, a vibração do Ace, a esperança que não morre mesmo quando o placar aperta. Porque aqui, cada torcedor é jogador, cada grito ecoa, cada conquista é de todos nós. Essa é a nossa história.<br><br>
+                    </span>
+                    <div class="history-impact">E aqui, cada fã é protagonista. <span class="furia-yellow">NÓS somos FURIA.</span><br> E seguimos prontos para fazer história, mais uma vez.</div>
+                    <span class="history-quote end">”</span>
+                </div>
+                <div class="history-modal-image">
+                    <div class="history-image-stack">
+                        <img src="/images/bg_furia6.png" alt="FURIA background 6" class="history-img bg6" />
+                        <img src="/images/bg_furia5.jpg" alt="Carta - FURIA" class="history-img bg5" />
+                    </div>
+                    <div class="image-caption">Foto: divulgação/ESL</div>
+                </div>
+                <button class="history-modal-close" id="closeHistoryModal">&times;</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de Personalização de Perfil -->
+    <div class="modal-overlay" id="profileModal" style="display:none; align-items:center; justify-content:center;">
+        <div class="modal" style="max-width:350px; width:95%; text-align:center;">
+            <button class="modal-close" id="closeProfileModal" aria-label="Fechar">&times;</button>
+            <h2 style="margin-bottom:1rem;">Seu Perfil no Chat</h2>
+            <form id="profileForm" autocomplete="off" style="display:flex; flex-direction:column; gap:1.1rem; align-items:center;">
+                <div>
+                    <label for="nickname" style="font-weight:600;">Apelido:</label><br>
+                    <input type="text" id="nickname" maxlength="18" style="margin-top:0.3rem; padding:0.5rem; border-radius:7px; border:1px solid #ccc; width:180px;" placeholder="Digite seu apelido" required>
+                </div>
+                <div>
+                    <label style="font-weight:600;">Avatar:</label><br>
+                    <div id="avatarOptions" style="display:flex; gap:0.7rem; margin-top:0.3rem; justify-content:center;">
+                        <label><input type="radio" name="avatar" value="🦊" checked> <span style="font-size:1.7rem;">🦊</span></label>
+                        <label><input type="radio" name="avatar" value="😎"> <span style="font-size:1.7rem;">😎</span></label>
+                        <label><input type="radio" name="avatar" value="🔥"> <span style="font-size:1.7rem;">🔥</span></label>
+                        <label><input type="radio" name="avatar" value="🎮"> <span style="font-size:1.7rem;">🎮</span></label>
+                        <label><input type="radio" name="avatar" value="/images/logo_furia.png"> <img src="/images/logo_furia.png" alt="FURIA" style="width:28px; vertical-align:middle; border-radius:50%;"></label>
+                    </div>
+                </div>
+                <button type="submit" class="player-btn" style="margin-top:0.7rem;">Salvar</button>
+            </form>
+        </div>
+    </div>
+    <!-- Fim Modal Perfil -->
+
+    <!-- Widget do Chatbot -->
+    <div id="furia-chatbot-widget" class="furia-chatbot-hidden">
+        <div class="chat-container">
+            <div class="chat-header">
+                <img src="/images/user_bot.png" alt="Logo PanteraBot" class="chat-logo">
+                <h2>PanteraBot 🐾</h2>
+                <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+                <button class="close-chat-btn" aria-label="Fechar chat" title="Fechar">&times;</button>
+            </div>
+            <div id="chat-box"></div>
+            <div class="quick-actions" id="quick-actions-panel"></div>
+            <div class="input-container">
+                <input type="text" id="user-input" placeholder="Digite sua mensagem..." autocomplete="off">
+                <button id="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <button id="open-chatbot-btn" aria-label="Abrir chat"><i class="fas fa-comment-dots"></i></button>
+
+    <!-- Carrega os scripts na ordem correta -->
+    <script src="/js/chat.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Funções de controle do widget
+            const widget = document.getElementById('furia-chatbot-widget');
+            const openBtn = document.getElementById('open-chatbot-btn');
+            const closeBtn = document.querySelector('#furia-chatbot-widget .close-chat-btn');
+            
+            function showWidget() {
+                widget.classList.add('furia-chatbot-visible');
+                widget.classList.remove('furia-chatbot-hidden');
+            }
+            
+            function hideWidget() {
+                widget.classList.remove('furia-chatbot-visible');
+                widget.classList.add('furia-chatbot-hidden');
+            }
+            
+            // Eventos do widget
+            openBtn.onclick = showWidget;
+            closeBtn.onclick = hideWidget;
+            
+            // Efeito de digitação no input
+            const input = document.getElementById('user-input');
+            input.addEventListener('focus', () => {
+                input.placeholder = 'VAMO FURIAAA! 🦊';
+            });
+            input.addEventListener('blur', () => {
+                input.placeholder = 'Digite sua mensagem...';
+            });
+            
+            // Abre o widget após um pequeno delay
+            setTimeout(showWidget, 800);
+        });
+        
+        // Funções auxiliares
+        function quickMessage(text) {
+            document.getElementById('user-input').value = text;
+            if (typeof sendMessage === 'function') {
+                sendMessage();
+            } else if (window.sendMessage) {
+                window.sendMessage();
+            }
+        }
+    </script>
+    <script src="/js/index.js"></script>
+</body>
+</html>

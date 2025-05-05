@@ -1,0 +1,627 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root {
+    --furia-black: #000000;
+    --furia-gold: #C9B037;
+    --furia-gold-light: #FFD700;
+    --furia-gold-dark: #A67C00;
+    --furia-silver: #D4D4D4;
+    --furia-dark: #1A1A1A;
+    --furia-darker: #0A0A0A;
+    --furia-gray: #2A2A2A;
+    --furia-white: #fff;
+}
+
+/* Features (Cards) */
+.features {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.feature {
+    background: rgba(255,215,0,0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--furia-gold);
+    min-width: 120px;
+    flex: 1;
+    max-width: 200px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255,215,0,0.2);
+    border-color: var(--furia-gold);
+}
+
+.feature span {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Modal Overlay (padrão) */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background: var(--furia-darker);
+    border: 2px solid var(--furia-gold);
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 90%;
+    width: 90%;
+    max-height: 90vh;
+    position: relative;
+    animation: modalFadeIn 0.3s ease;
+    overflow-y: auto;
+    margin-bottom: 60px;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--furia-gold);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    line-height: 1;
+    border-radius: 50%;
+    box-shadow: none;
+}
+
+.modal-close:hover {
+    background: rgba(255, 215, 0, 0.18);
+    box-shadow: 0 2px 8px rgba(255,215,0,0.10);
+    color: #fff;
+}
+
+/* Título da modal de elenco */
+#statsModal h2 {
+    font-family: 'Bebas Neue', 'Montserrat', 'Roboto', sans-serif !important;
+    font-size: 2.4rem !important;
+    letter-spacing: 0.04em;
+    color: var(--furia-white) !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    margin-bottom: 2rem;
+    text-align: center !important;
+}
+
+/* Nome + nick dos jogadores */
+.player-info h3 {
+    color: var(--furia-white);
+    font-size: 1.25rem;
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.3rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+/* Ícones das redes sociais dos jogadores */
+.player-card .player-socials a,
+.player-card .player-socials i {
+    color: var(--furia-gold-light) !important;
+    opacity: 0.85;
+    transition: color 0.2s, opacity 0.2s;
+}
+.player-card .player-socials a:hover,
+.player-card .player-socials i:hover {
+    color: var(--furia-white) !important;
+    opacity: 1;
+}
+
+/* Modal Nossa História */
+.history-modal-overlay {
+    background: rgba(0,0,0,0.85);
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.history-modal-overlay[style*="display: flex"] {
+    display: flex !important;
+    opacity: 1 !important;
+    pointer-events: auto;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.history-modal {
+    max-width: 1100px;
+    width: 95vw;
+    min-height: 60vh;
+    border-radius: 18px;
+    border: 2.5px solid var(--furia-gold);
+    box-shadow: 0 0 32px 0 rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 2.5rem;
+    overflow: hidden;
+}
+
+.history-modal::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 18px;
+}
+
+.history-modal-close {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    font-size: 2.2rem;
+    color: var(--furia-gold);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2000;
+    transition: color 0.2s;
+    padding: 0.2em 0.5em;
+}
+
+.history-modal-close:hover {
+    color: #fff;
+}
+
+.history-modal-content {
+    width: 95%;
+    font-size: 1.25rem;
+    color: #fff;
+    border-radius: 14px;
+    padding: 3.2rem 2.5rem 2.8rem 2.5rem;
+    margin: 2.5rem 0 2.5rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    text-align: left;
+    line-height: 1.8;
+    font-family: 'Dancing Script', 'Caveat', 'Roboto', cursive, sans-serif;
+    position: relative;
+    z-index: 2;
+}
+
+
+.players-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    padding: 1rem;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.players-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.players-grid::-webkit-scrollbar-track {
+    background: rgba(42, 42, 42, 0.5);
+    border-radius: 4px;
+}
+
+.players-grid::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.players-grid::-webkit-scrollbar-thumb:hover {
+    background: var(--furia-gold);
+    cursor: pointer;
+}
+
+.player-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    min-height: 400px;
+    flex: 0 0 300px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--furia-gold);
+    border-radius: 15px;
+    padding: 1.5rem 1rem 2.8rem 1rem;
+    margin: 0.5rem 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.player-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+}
+
+.player-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.player-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--furia-gold);
+    background: #fff;
+}
+
+.player-info {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 220px;
+}
+
+.player-role-titular, .player-role-reserva, .player-role-tecnico {
+    font-weight: bold;
+    font-size: 1.05rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.2rem;
+}
+
+.player-role-titular{
+    color: #4FC3F7;
+}
+
+.player-role-reserva {
+    color: #FF7043;
+}
+
+.player-role-tecnico {
+    color: #81C784;
+}
+
+.player-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.team-score {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--furia-gold);
+    margin-top: 0.3rem;
+}
+
+.match-result {
+    text-align: center;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.match-result.victory {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+}
+
+.match-result.defeat {
+    background: rgba(244, 67, 54, 0.2);
+    color: #F44336;
+    border: 1px solid #F44336;
+}
+
+.player-socials {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1.1rem;
+    min-height: 40px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 18px;
+}
+
+.player-socials a {
+    color: var(--furia-white) !important;
+    font-size: 1.45rem !important;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem 0.3rem;
+}
+
+.player-socials a:hover {
+    color: var(--furia-gold-light) !important;
+}
+
+.player-socials i {
+    font-size: 1.45rem !important;
+    margin: 0 !important;
+}
+
+.player-socials span {
+    display: none !important;
+}
+
+.event-logo {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    background: var(--furia-gray);
+    border-radius: 8px;
+    margin-right: 0.7rem;
+}
+
+.player-card.starter {
+    border: 2px solid var(--furia-gold);
+    background: rgba(0,0,0,0.7);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    padding: 1.2rem 1rem;
+    border-radius: 16px;
+    margin: 0.5rem 0;
+    min-width: 260px;
+    max-width: 320px;
+}
+
+.player-card .flag-icon {
+    margin-bottom: 0.2rem;
+}
+
+.player-card .player-photo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--furia-gold);
+    margin-bottom: 0.2rem;
+    background: #fff;
+}
+
+.player-card .player-nick {
+    font-size: 1.1rem;
+    color: var(--furia-gold) !important;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.18);
+}
+
+.player-card .player-role-titular {
+    color: #81C784;
+    font-weight: bold;
+    font-size: 1.05rem;
+    margin-bottom: 0.2rem;
+}
+
+.player-card .player-role-reserva {
+    color: #9b2400;
+    font-weight: bold;
+    font-size: 1.05rem;
+    margin-bottom: 0.2rem;
+}
+
+.player-card .player-role-tecnico {
+    color: #4FC3F7;
+    font-weight: bold;
+    font-size: 1.05rem;
+    margin-bottom: 0.2rem;
+}
+
+.social-links {
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 1rem;
+    position: relative;
+    flex-direction: row;
+}
+
+.history-modal-emotional-bg {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(120deg, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.7) 100%), url('../images/bg_furia4.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 0 80px 40px rgba(0,0,0,0.7) inset;
+}
+
+.history-modal-content.emotional-letter {
+    margin-left: 0;
+    align-items: flex-start;
+    max-width: 50vw;
+    padding-left: 1.2rem;
+    font-size: 1rem;
+    max-height: none;
+    overflow-y: visible;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    line-height: 1.45;
+}
+
+.history-quote, .history-quote.end {
+    font-size: 3rem;
+    color: var(--furia-gold-light);
+    font-family: 'Dancing Script', 'Caveat', cursive, sans-serif;
+    font-weight: bold;
+    opacity: 0.7;
+    display: block;
+    margin: 0;
+    line-height: 1;
+    position: relative;
+    z-index: 2;
+
+}
+.history-quote{
+    right: 30px;
+    top: 10px;
+}
+.history-quote.end {
+    left: 630px;
+    top: -45px;
+}
+
+.history-modal-image {
+    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 220px;
+    max-width: 40vw;
+    padding: 2rem 2.5rem 2rem 0;
+    position: relative;
+}
+
+.history-modal-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    object-fit: contain;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+    max-height: 60vh;
+    max-width: 100%;
+    display: block;
+    background: #111;
+}
+
+.history-modal-image .image-caption {
+    display: none;
+}
+
+.history-lead {
+    display: block;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.5rem;
+}
+
+.history-body {
+    font-size: 1.18rem;
+    font-family: 'Dancing Script', 'Caveat', 'Roboto', cursive, sans-serif;
+    color: #f5f5f5;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.history-impact {
+    text-align: flex-start;
+    margin: 0.7rem 0;
+    font-size: 1.22rem;
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    font-weight: 600;
+    color: var(--furia-gold-light);
+    letter-spacing: 0.02em;
+}
+
+.furia-yellow {
+    color: var(--furia-gold-light);
+    font-weight: bold;
+    font-size: 1.35em;
+    letter-spacing: 0.03em;
+}
+
+.history-image-stack {
+    position: relative;
+    width: 420px; 
+    height: 320px; 
+}
+
+.history-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+    background: #111;
+}
+
+.history-img.bg6 {
+    z-index: 1;
+    left: 200px;
+    top: -50px;    
+    box-shadow: 0 12px 32px 0 rgba(0,0,0,0.55), 0 0 0 3px var(--furia-gold-dark);
+    transition: box-shadow 0.3s;
+    transform: rotate(3deg);
+}
+
+.history-img.bg6:hover {
+    box-shadow: 0 16px 48px 0 var(--furia-gold-light), 0 0 0 6px var(--furia-gold-light);
+    filter: brightness(1.03) saturate(1.03);
+    transition: box-shadow 0.3s, filter 0.3s;
+}
+
+.history-img.bg5 {
+    transform: rotate(-3deg);
+    z-index: 2;
+    left: -120px;
+    top: 160px;
+    box-shadow: 0 12px 32px 0 rgba(0,0,0,0.55), 0 0 0 3px var(--furia-gold-dark);
+    transition: box-shadow 0.3s;
+}
+
+.history-img.bg5:hover {
+    box-shadow: 0 16px 48px 0 var(--furia-gold-light), 0 0 0 6px var(--furia-gold-light);
+    filter: brightness(1.03) saturate(1.03);
+    transition: box-shadow 0.3s, filter 0.3s;
+}
+
+
